@@ -2,10 +2,12 @@
 $(window).on('load', function() {
 	if (forge.is.web()) {
     $('#nav').show();
+    bindNav();
 	} else {
 		forge.topbar.setTitle("Here and Now");
   	$('#nav').hide();
   }
+  updateView("home");
 });
 
 forge.enableDebug();
@@ -17,25 +19,50 @@ var scrollTop = function () {
     }, 0);
 }
 
-// This is the method we are going to call when a tabbar button is pressed
-var updateTab = function (search) {
-    scrollTop();
-    // For now just pop up a message with the tab which was pressed
-    alert(search);
+// This is the method we are going to call when a navbar or tabbar button is pressed
+var updateView = function (view) {
+    // scrollTop();
+    // Flip views depending on selection
+  	if (view == "settings") {
+      $('#home').hide();
+      $('#settings').show();
+      $('#about').hide();
+  	} else if (view == "about") {
+      $('#home').hide();
+      $('#settings').hide();
+      $('#about').show();
+    } else {
+      $('#home').show();
+      $('#settings').hide();
+      $('#about').hide();
+    }
 }
 
-// Add our 3 tab buttons to the tabbar and add press listeners
+// Bind to navbar
+var bindNav = function() {
+  $('#nav-home').bind('click', function() {
+    updateView("home");
+  });
+  $('#nav-settings').bind('click', function() {
+    updateView("settings");
+  });
+  $('#nav-about').bind('click', function() {
+    updateView("about");
+  });
+}
+
+// Add our tab buttons to the tabbar and add press listeners
 var homeButton = forge.tabbar.addButton({
     text: "Home",
     icon: "img/home.png",
     index: 0
 }, function (button) {
     button.onPressed.addListener(function () {
-        updateTab("home");
+        updateView("home");
     });
     // This is the default button, activate it immediately
     button.setActive();
-    updateTab("home");
+    updateView("home");
 });
 
 var settingsButton = forge.tabbar.addButton({
@@ -44,6 +71,6 @@ var settingsButton = forge.tabbar.addButton({
     index: 1
 }, function (button) {
     button.onPressed.addListener(function () {
-        updateTab("settings");
+        updateView("settings");
     });
 });

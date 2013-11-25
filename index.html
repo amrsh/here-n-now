@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="js/weather.js"></script>
 	</head>
 	<body>
-	  <div id="nav" class="navbar navbar-default navbar-fixed-top" style="display:none">
+	  <div id="nav" class="navbar navbar-default navbar-fixed-top">
   	  <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -18,20 +18,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Here 'n' Now</a>
+          <a id="nav-home" class="navbar-brand" href="#" class="active">Here and Now&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div><!-- /.navbar-header -->
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Settings</a></li>
+            <li><a id="nav-settings" href="#">Settings</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">About</a></li>
+            <li><a id="nav-about" href="#">About</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
 
-    <div class="container">
+    <div id="home" class="container">
 	  
       <script type="x-mustache-template" id="forecast_information_tmpl">
         <div class="page-header" id="banner">
@@ -75,10 +75,34 @@
 
   		<section id="current_conditions"></section>
 
-  		<div id="options">
-  			<div id="options_header">Select City</div>
-  			<select id="city_menu"></select>
-  		</div>
+	  </div><!-- /.container -->
+
+  	<div id="settings" class="container">  		  
+      <div class="page-header">
+  		  <div class="options">
+  		    <div class="row">
+            <div class="col-lg-10">
+      			  <h1>Select City</h1>
+      			</div>  
+    			  <div class="col-lg-10">
+    			    <select class="form-control" id="city_menu"></select>
+    			  </div>  
+  			  </div>
+  		  </div>
+		  </div> 		  
+	  </div><!-- /.container -->
+	  
+  	<div id="about" class="container">  		  
+      <div class="page-header">
+  	    <div class="row">
+          <div class="col-lg-10">
+    			  <h1>About</h1>
+    			</div>  
+  			  <div class="col-lg-10">
+  			    <p>Get info on what is happening right here, right now.</p>
+  			  </div>  
+  		  </div>  
+		  </div>		  
 	  </div><!-- /.container -->
   	
 	</body>
