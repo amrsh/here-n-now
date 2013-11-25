@@ -25,7 +25,7 @@ function populateWeatherConditions (weather) {
 
 
 function getWeatherInfo(location, callback) {
-	var api_key = "YOUR_API_KEY";
+	var api_key = "4ec870caf22483d9";
 	forge.logging.info("[getWeatherInfo] getting weather for for " + location);
 	forge.request.ajax({
 		url: "http://api.wunderground.com/api/" + api_key +

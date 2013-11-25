@@ -1,7 +1,7 @@
 {
 	"config_version": "4",
-	"name": "Weather Tutorial",
-	"author": "james@trigger.io",
+	"name": "Here 'n' Now",
+	"author": "adam@amrsh.com",
 	"modules": {
 		"media": {
 			"version": "2.1",
@@ -41,5 +41,6 @@
 			}
 		}
 	},
-	"description": "An empty app created by default"
+	"description": "Get info on what's happening right here, right now",
+	"homepage": "here-n-now.info"
 }
