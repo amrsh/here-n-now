@@ -1,0 +1,28 @@
+{
+	"config_version": "2",
+	"name": "Weather Tutorial",
+	"author": "james@trigger.io",
+	"version": "0.1",
+	"platform_version": "v2.0.4",
+	"description": "An empty app created by default",
+	"modules": {
+		"logging": {
+			"level": "DEBUG"
+		},
+		"contact": true,
+		"file": true,
+		"is": true,
+		"media": {},
+		"prefs": true,
+		"request": {
+			"permissions": [
+				"http://api.wunderground.com/api/*"
+			]
+		},
+		"tools": true,
+		"reload": true,
+		"button": {
+			"default_popup": "index.html"
+		}
+	}
+}
