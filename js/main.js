@@ -10,7 +10,7 @@ $(window).on('load', function() {
   updateView("home");
 });
 
-forge.enableDebug();
+// forge.enableDebug();
 
 // A helper function so that when we change tabs the web view scrolls to the top of the new page
 var scrollTop = function () {
@@ -41,12 +41,18 @@ var updateView = function (view) {
 // Bind to navbar
 var bindNav = function() {
   $('#nav-home').bind('click', function() {
+    if($('#nav-collapse').hasClass('in'))
+      $('#nav-collapse').collapse('hide');
     updateView("home");
   });
   $('#nav-settings').bind('click', function() {
+    if($('#nav-collapse').hasClass('in'))
+      $('#nav-collapse').collapse('hide');
     updateView("settings");
   });
   $('#nav-about').bind('click', function() {
+    if($('#nav-collapse').hasClass('in'))
+      $('#nav-collapse').collapse('hide');
     updateView("about");
   });
 }
